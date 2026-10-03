@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Registration Page | TGPL</title>
+
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+
+        body {
+
+            margin: 0;
+
+            padding: 0;
+
+            font-family: Arial, sans-serif;
+
+            background-color: #e99597;
+
+            color: #222;
+        }
+
+
+        /* =========================
+           PAGE TITLE
+        ========================== */
+
+        .page-title {
+
+            text-align: center;
+
+            font-size: 28px;
+
+            margin-top: 18px;
+
+            margin-bottom: 22px;
+        }
+
+
+        /* =========================
+           MAIN CONTAINER
+        ========================== */
+
+        .registration-container {
+
+            width: 650px;
+
+            max-width: 90%;
+
+            margin: auto;
+
+            text-align: center;
+        }
+
+
+        /* =========================
+           SELECT BOX
+        ========================== */
+
+        select {
+
+            width: 260px;
+
+            height: 30px;
+
+            font-size: 18px;
+
+            padding: 2px 6px;
+
+            margin-bottom: 25px;
+        }
+
+
+        /* =========================
+           SECTION HEADINGS
+        ========================== */
+
+        h2 {
+
+            font-size: 24px;
+
+            margin-top: 0;
+
+            margin-bottom: 20px;
+        }
+
+
+        /* =========================
+           FORM
+        ========================== */
+
+        .form-group {
+
+            margin-bottom: 12px;
+        }
+
+
+        /* =========================
+           INPUT
+        ========================== */
+
+        input {
+
+            width: 100%;
+
+            height: 36px;
+
+            border: 1px solid #999;
+
+            padding: 5px 8px;
+
+            font-size: 18px;
+
+            background-color: white;
+        }
+
+
+        input::placeholder {
+
+            color: #777;
+        }
+
+
+        /* =========================
+           BACK BUTTON
+        ========================== */
+
+        .back-button {
+
+            margin-top: 20px;
+
+            margin-right: 10px;
+
+            width: 180px;
+
+            height: 40px;
+
+            border: none;
+
+            background-color: #777;
+
+            color: white;
+
+            font-size: 17px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+        }
+
+
+        .back-button:hover {
+
+            background-color: #555;
+        }
+
+
+        /* =========================
+           REGISTER BUTTON
+        ========================== */
+
+        .register-button {
+
+            margin-top: 20px;
+
+            width: 180px;
+
+            height: 40px;
+
+            border: none;
+
+            background-color: #333;
+
+            color: white;
+
+            font-size: 17px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+        }
+
+
+        .register-button:hover {
+
+            background-color: #555;
+        }
+
+
+        /* =========================
+           MESSAGE
+        ========================== */
+
+        #message {
+
+            margin-top: 15px;
+
+            font-size: 16px;
+
+            font-weight: bold;
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================== */
+
+        @media (max-width: 700px) {
+
+            .registration-container {
+
+                width: 90%;
+            }
+
+            .page-title {
+
+                font-size: 25px;
+            }
+
+            h2 {
+
+                font-size: 21px;
+            }
+
+            select {
+
+                width: 260px;
+            }
+
+            .back-button,
+            .register-button {
+
+                width: 160px;
+
+                margin-right: 5px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         PAGE TITLE
+    ========================== -->
+
+    <h1 class="page-title">
+
+        Registration Page
+
+    </h1>
+
+
+    <div class="registration-container">
+
+
+        <!-- =========================
+             COMPANY
+        ========================== -->
+
+        <select id="company">
+
+            <option value="TGPL">
+                TGPL
+            </option>
+
+            <option value="Tara Grains">
+                Tara Grains
+            </option>
+
+        </select>
+
+
+
+        <!-- =========================
+             TGPL DETAILS
+        ========================== -->
+
+        <h2>
+
+            TGPL Details
+
+        </h2>
+
+
+        <select id="category">
+
+            <option value="">
+                Select Category
+            </option>
+
+            <option value="Employee">
+                Employee
+            </option>
+
+            <option value="Trader">
+                Trader
+            </option>
+
+            <option value="Customer">
+                Customer
+            </option>
+
+        </select>
+
+
+
+        <!-- =========================
+             EMPLOYEE REGISTRATION
+        ========================== -->
+
+        <h2>
+
+            Employee Registration
+
+        </h2>
+
+
+        <form id="registrationForm">
+
+
+            <!-- EMPLOYEE NAME -->
+
+            <div class="form-group">
+
+                <input
+                    type="text"
+                    id="employeeName"
+                    placeholder="Employee Name"
+                    required
+                >
+
+            </div>
+
+
+            <!-- EMPLOYEE ID -->
+
+            <div class="form-group">
+
+                <input
+                    type="text"
+                    id="employeeId"
+                    placeholder="Employee ID"
+                    required
+                >
+
+            </div>
+
+
+            <!-- DESIGNATION -->
+
+            <div class="form-group">
+
+                <input
+                    type="text"
+                    id="designation"
+                    placeholder="Employee Designation"
+                    required
+                >
+
+            </div>
+
+
+            <!-- DEPARTMENT -->
+
+            <div class="form-group">
+
+                <input
+                    type="text"
+                    id="department"
+                    placeholder="Employee Dept"
+                    required
+                >
+
+            </div>
+
+
+            <!-- AGE -->
+
+            <div class="form-group">
+
+                <input
+                    type="number"
+                    id="age"
+                    placeholder="Employee Age"
+                    required
+                >
+
+            </div>
+
+
+            <!-- ADDRESS -->
+
+            <div class="form-group">
+
+                <input
+                    type="text"
+                    id="address"
+                    placeholder="Employee Address"
+                    required
+                >
+
+            </div>
+
+
+            <!-- AADHAR -->
+
+            <div class="form-group">
+
+                <input
+                    type="text"
+                    id="aadhar"
+                    placeholder="Employee Aadhar"
+                    maxlength="12"
+                    required
+                >
+
+            </div>
+
+
+            <!-- CONTACT -->
+
+            <div class="form-group">
+
+                <input
+                    type="tel"
+                    id="contact"
+                    placeholder="Employee Contact"
+                    required
+                >
+
+            </div>
+
+
+            <!-- REFERENCE NAME -->
+
+            <div class="form-group">
+
+                <input
+                    type="text"
+                    id="referenceName"
+                    placeholder="Reference Name"
+                    required
+                >
+
+            </div>
+
+
+            <!-- REFERENCE CONTACT -->
+
+            <div class="form-group">
+
+                <input
+                    type="tel"
+                    id="referenceContact"
+                    placeholder="Reference Contact"
+                    required
+                >
+
+            </div>
+
+
+
+            <!-- =========================
+                 BACK TO LOGIN BUTTON
+            ========================== -->
+
+            <button
+                type="button"
+                class="back-button"
+                onclick="window.location.href='login.html'"
+            >
+
+                ← Back to Login
+
+            </button>
+
+
+
+            <!-- =========================
+                 REGISTER BUTTON
+            ========================== -->
+
+            <button
+                type="submit"
+                class="register-button"
+            >
+
+                Register
+
+            </button>
+
+
+        </form>
+
+
+
+        <!-- =========================
+             SUCCESS MESSAGE
+        ========================== -->
+
+        <p id="message"></p>
+
+
+    </div>
+
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script>
+
+        const form =
+            document.getElementById("registrationForm");
+
+
+        const message =
+            document.getElementById("message");
+
+
+        form.addEventListener(
+            "submit",
+            function(event) {
+
+                event.preventDefault();
+
+
+                /* =========================
+                   SUCCESS MESSAGE
+                ========================== */
+
+                message.textContent =
+                    "Employee registered successfully.";
+
+
+                message.style.color =
+                    "green";
+
+
+                /* =========================
+                   OPEN TGPL DASHBOARD
+                   AFTER 1 SECOND
+                ========================== */
+
+                setTimeout(function() {
+
+                    window.location.href =
+                        "dashboard.html";
+
+                }, 1000);
+
+            }
+        );
+
+    </script>
+
+
+</body>
+
+</html>
