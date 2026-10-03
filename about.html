@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>About Us | Tara Grains Pvt. Ltd.</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        /* ABOUT PAGE */
+
+        .about-page {
+            padding-top: 78px;
+        }
+
+        .about-hero {
+            min-height: 430px;
+            background:
+                linear-gradient(
+                    rgba(20, 55, 35, 0.75),
+                    rgba(20, 55, 35, 0.75)
+                ),
+                url("images/factory.jpg");
+
+            background-size: cover;
+            background-position: center;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+            color: white;
+            padding: 60px 8%;
+        }
+
+        .about-hero h1 {
+            font-family: "Playfair Display", Georgia, serif;
+            font-size: 58px;
+            margin-bottom: 15px;
+        }
+
+        .about-hero p {
+            max-width: 700px;
+            margin: auto;
+            font-size: 17px;
+            line-height: 1.8;
+            color: #edf3ee;
+        }
+
+        .about-content {
+            padding: 90px 8%;
+            background: #faf8f2;
+        }
+
+        .about-grid {
+            max-width: 1150px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 60px;
+
+            align-items: center;
+        }
+
+        .about-text .section-label {
+            color: #987347;
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 2.5px;
+            margin-bottom: 12px;
+        }
+
+        .about-text h2 {
+            font-family: "Playfair Display", Georgia, serif;
+            color: #26382b;
+            font-size: 42px;
+            line-height: 1.2;
+            margin-bottom: 22px;
+        }
+
+        .about-text p {
+            color: #6c746d;
+            font-size: 15px;
+            line-height: 1.9;
+            margin-bottom: 16px;
+        }
+
+        .about-image {
+            min-height: 430px;
+
+            background-image: url("images/factory.jpg");
+            background-size: cover;
+            background-position: center;
+
+            border-radius: 14px;
+        }
+
+        .about-cards {
+            padding: 85px 8%;
+            background: #f4efde;
+        }
+
+        .about-cards-container {
+            max-width: 1100px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .about-box {
+            background: white;
+            padding: 35px;
+            border-radius: 13px;
+
+            border: 1px solid #e2e5df;
+
+            text-align: center;
+
+            transition: 0.3s ease;
+        }
+
+        .about-box:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 15px 35px rgba(30, 60, 40, 0.10);
+        }
+
+        .about-box .box-icon {
+            width: 65px;
+            height: 65px;
+
+            margin: 0 auto 20px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: #e8f1e9;
+            border-radius: 50%;
+
+            font-size: 28px;
+        }
+
+        .about-box h3 {
+            color: #26382b;
+            font-size: 20px;
+            margin-bottom: 12px;
+        }
+
+        .about-box p {
+            color: #737a73;
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        .mission-section {
+            padding: 90px 8%;
+            background: #ffffff;
+            text-align: center;
+        }
+
+        .mission-section .section-label {
+            color: #987347;
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 2.5px;
+        }
+
+        .mission-section h2 {
+            font-family: "Playfair Display", Georgia, serif;
+            color: #26382b;
+            font-size: 42px;
+            margin: 10px auto 20px;
+        }
+
+        .mission-section p {
+            max-width: 800px;
+            margin: auto;
+            color: #6c746d;
+            font-size: 15px;
+            line-height: 1.9;
+        }
+
+        @media (max-width: 750px) {
+
+            .about-hero h1 {
+                font-size: 42px;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-cards-container {
+                grid-template-columns: 1fr;
+            }
+
+            .about-image {
+                min-height: 300px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- =========================
+         NAVIGATION
+    ========================== -->
+
+    <header class="navbar">
+
+        <div class="logo">
+            <h2>TARA GRAINS</h2>
+            <span>PVT. LTD.</span>
+        </div>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html" class="active">About Us</a>
+            <a href="products.html">Products</a>
+            <a href="index.html#contact">Contact</a>
+            <a href="login.html" class="login-btn">Login</a>
+        </nav>
+
+    </header>
+
+
+    <main class="about-page">
+
+        <!-- =========================
+             ABOUT HERO
+        ========================== -->
+
+        <section class="about-hero">
+
+            <div>
+                <p class="small-title">
+                    TARA GRAINS PVT. LTD.
+                </p>
+
+                <h1>About Us</h1>
+
+                <p>
+                    Reliable flour production through quality processing,
+                    efficient management and modern production practices.
+                </p>
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             COMPANY INTRODUCTION
+        ========================== -->
+
+        <section class="about-content">
+
+            <div class="about-grid">
+
+                <div class="about-text">
+
+                    <p class="section-label">
+                        WHO WE ARE
+                    </p>
+
+                    <h2>
+                        Quality Production.
+                        Reliable Management.
+                    </h2>
+
+                    <p>
+                        Tara Grains Pvt. Ltd. is a flour production company
+                        focused on producing quality wheat flour products
+                        through efficient production and systematic management.
+                    </p>
+
+                    <p>
+                        Our flour mill production management system helps
+                        organize production information, product records,
+                        customer details and order information in a structured
+                        manner.
+                    </p>
+
+                    <p>
+                        By using modern processing practices and organized
+                        production management, we aim to maintain consistent
+                        product quality and improve operational efficiency.
+                    </p>
+
+                </div>
+
+
+                <div class="about-image"></div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             COMPANY VALUES
+        ========================== -->
+
+        <section class="about-cards">
+
+            <div class="about-cards-container">
+
+                <div class="about-box">
+
+                    <div class="box-icon">
+                        🌾
+                    </div>
+
+                    <h3>Quality</h3>
+
+                    <p>
+                        We focus on maintaining consistent quality
+                        throughout flour production and processing.
+                    </p>
+
+                </div>
+
+
+                <div class="about-box">
+
+                    <div class="box-icon">
+                        ⚙️
+                    </div>
+
+                    <h3>Efficiency</h3>
+
+                    <p>
+                        Organized production and management processes
+                        help improve operational efficiency.
+                    </p>
+
+                </div>
+
+
+                <div class="about-box">
+
+                    <div class="box-icon">
+                        🤝
+                    </div>
+
+                    <h3>Reliability</h3>
+
+                    <p>
+                        We aim to provide dependable products and
+                        systematic management for our customers.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             MISSION
+        ========================== -->
+
+        <section class="mission-section">
+
+            <p class="section-label">
+                OUR MISSION
+            </p>
+
+            <h2>
+                Better Production Through Better Management
+            </h2>
+
+            <p>
+                Our mission is to support efficient flour production by
+                combining quality processing, organized information
+                management and reliable product handling. We focus on
+                maintaining production records, managing products and
+                orders efficiently, and supporting consistent service.
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <div class="footer-logo">
+            TARA GRAINS PVT. LTD.
+        </div>
+
+        <p>
+            Quality Flour. Trusted Production.
+        </p>
+
+        <p class="copyright">
+            © 2026 Tara Grains Pvt. Ltd. All Rights Reserved.
+        </p>
+
+    </footer>
+
+</body>
+</html>
