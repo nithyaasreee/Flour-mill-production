@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>TGPL Dashboard</title>
+
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+
+        body {
+
+            margin: 0;
+
+            padding: 0;
+
+            font-family: Arial, sans-serif;
+
+            background-image:
+                linear-gradient(
+                    rgba(230, 250, 240, 0.55),
+                    rgba(230, 250, 240, 0.55)
+                ),
+                url("images/factory.jpg");
+
+            background-size: cover;
+
+            background-position: center;
+
+            background-attachment: fixed;
+
+            min-height: 100vh;
+
+        }
+
+
+        /* =========================
+           DASHBOARD TITLE
+        ========================== */
+
+        .dashboard-title {
+
+            text-align: center;
+
+            font-size: 42px;
+
+            margin-top: 18px;
+
+            margin-bottom: 30px;
+
+            color: #000;
+
+        }
+
+
+        /* =========================
+           MAIN FORM CARD
+        ========================== */
+
+        .dashboard-container {
+
+            width: 850px;
+
+            max-width: 90%;
+
+            margin: auto;
+
+            background-color: rgba(248, 255, 251, 0.92);
+
+            padding: 35px 40px;
+
+            border-radius: 12px;
+
+        }
+
+
+        /* =========================
+           FORM GROUP
+        ========================== */
+
+        .form-group {
+
+            margin-bottom: 24px;
+
+        }
+
+
+        /* =========================
+           LABEL
+        ========================== */
+
+        label {
+
+            display: block;
+
+            font-size: 22px;
+
+            font-weight: bold;
+
+            color: #444;
+
+            margin-bottom: 7px;
+
+        }
+
+
+        /* =========================
+           INPUT
+        ========================== */
+
+        input,
+        select {
+
+            width: 100%;
+
+            height: 48px;
+
+            border: 1px solid #c9c9c9;
+
+            background-color: white;
+
+            padding: 8px 10px;
+
+            font-size: 20px;
+
+            color: #333;
+
+        }
+
+
+        /* =========================
+           SELECT
+        ========================== */
+
+        select {
+
+            cursor: pointer;
+
+        }
+
+
+        /* =========================
+           SUBMIT BUTTON
+        ========================== */
+
+        .dashboard-button {
+
+            width: 200px;
+
+            height: 48px;
+
+            border: none;
+
+            background-color: #26382b;
+
+            color: white;
+
+            font-size: 18px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            display: block;
+
+            margin: 25px auto 5px;
+
+            border-radius: 5px;
+
+        }
+
+
+        .dashboard-button:hover {
+
+            background-color: #987347;
+
+        }
+
+
+        /* =========================
+           BACK BUTTON
+        ========================== */
+
+        .back-button {
+
+            width: 200px;
+
+            height: 48px;
+
+            border: none;
+
+            background-color: #777;
+
+            color: white;
+
+            font-size: 18px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            display: block;
+
+            margin: 15px auto;
+
+            border-radius: 5px;
+
+        }
+
+
+        .back-button:hover {
+
+            background-color: #555;
+
+        }
+
+
+        /* =========================
+           MESSAGE
+        ========================== */
+
+        #dashboardMessage {
+
+            text-align: center;
+
+            font-size: 17px;
+
+            font-weight: bold;
+
+            margin-top: 15px;
+
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================== */
+
+        @media (max-width: 700px) {
+
+            .dashboard-title {
+
+                font-size: 32px;
+
+            }
+
+
+            .dashboard-container {
+
+                padding: 25px 20px;
+
+            }
+
+
+            label {
+
+                font-size: 18px;
+
+            }
+
+
+            input,
+            select {
+
+                font-size: 17px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         TITLE
+    ========================== -->
+
+    <h1 class="dashboard-title">
+
+        TGPL Dashboard
+
+    </h1>
+
+
+
+    <!-- =========================
+         DASHBOARD FORM
+    ========================== -->
+
+    <div class="dashboard-container">
+
+
+        <!-- CUSTOMER PHONE / ID -->
+
+        <div class="form-group">
+
+            <label for="customerId">
+
+                Customer Phone Number or ID:
+
+            </label>
+
+            <input
+                type="text"
+                id="customerId"
+                placeholder="Enter Customer Phone Number or ID"
+            >
+
+        </div>
+
+
+
+        <!-- PURCHASE ORDER -->
+
+        <div class="form-group">
+
+            <label for="purchaseOrder">
+
+                Purchase Order Number:
+
+            </label>
+
+            <input
+                type="text"
+                id="purchaseOrder"
+                placeholder="Enter Purchase Order Number"
+            >
+
+        </div>
+
+
+
+        <!-- PURCHASE DATE -->
+
+        <div class="form-group">
+
+            <label for="purchaseDate">
+
+                Purchase Date:
+
+            </label>
+
+            <input
+                type="date"
+                id="purchaseDate"
+            >
+
+        </div>
+
+
+
+        <!-- PRODUCT -->
+
+        <div class="form-group">
+
+            <label for="productName">
+
+                Product Name:
+
+            </label>
+
+            <select id="productName">
+
+                <option value="Atta">
+                    Atta
+                </option>
+
+                <option value="Maida">
+                    Maida
+                </option>
+
+                <option value="Wheat Bran">
+                    Wheat Bran
+                </option>
+
+            </select>
+
+        </div>
+
+
+
+        <!-- TRADER ID -->
+
+        <div class="form-group">
+
+            <label for="traderId">
+
+                Trader ID Number:
+
+            </label>
+
+            <input
+                type="text"
+                id="traderId"
+                placeholder="Enter Trader ID Number"
+            >
+
+        </div>
+
+
+
+        <!-- TRADER NAME -->
+
+        <div class="form-group">
+
+            <label for="traderName">
+
+                Trader Name:
+
+            </label>
+
+            <input
+                type="text"
+                id="traderName"
+                placeholder="Enter Trader Name"
+            >
+
+        </div>
+
+
+
+        <!-- STATE -->
+
+        <div class="form-group">
+
+            <label for="stateName">
+
+                State Name:
+
+            </label>
+
+            <input
+                type="text"
+                id="stateName"
+                placeholder="Enter State Name"
+            >
+
+        </div>
+
+
+
+        <!-- =========================
+             SUBMIT BUTTON
+        ========================== -->
+
+        <button
+            type="button"
+            class="dashboard-button"
+            onclick="submitDashboard()"
+        >
+
+            Submit
+
+        </button>
+
+
+
+        <!-- =========================
+             BACK TO REGISTRATION
+        ========================== -->
+
+        <button
+            type="button"
+            class="back-button"
+            onclick="window.location.href='registration.html'"
+        >
+
+            ← Back to Registration
+
+        </button>
+
+
+
+        <!-- MESSAGE -->
+
+        <p id="dashboardMessage"></p>
+
+
+    </div>
+
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script>
+
+        function submitDashboard() {
+
+
+            /* =========================
+               GET VALUES FROM DASHBOARD
+            ========================== */
+
+            const customerId =
+                document
+                .getElementById("customerId")
+                .value
+                .trim();
+
+
+            const purchaseOrder =
+                document
+                .getElementById("purchaseOrder")
+                .value
+                .trim();
+
+
+            const purchaseDate =
+                document
+                .getElementById("purchaseDate")
+                .value;
+
+
+            const productName =
+                document
+                .getElementById("productName")
+                .value;
+
+
+            const traderId =
+                document
+                .getElementById("traderId")
+                .value
+                .trim();
+
+
+            const traderName =
+                document
+                .getElementById("traderName")
+                .value
+                .trim();
+
+
+            const stateName =
+                document
+                .getElementById("stateName")
+                .value
+                .trim();
+
+
+
+            /* =========================
+               MESSAGE
+            ========================== */
+
+            const message =
+                document
+                .getElementById("dashboardMessage");
+
+
+
+            /* =========================
+               CHECK REQUIRED FIELDS
+            ========================== */
+
+            if (
+
+                customerId === "" ||
+
+                purchaseOrder === "" ||
+
+                purchaseDate === "" ||
+
+                traderId === "" ||
+
+                traderName === "" ||
+
+                stateName === ""
+
+            ) {
+
+                message.textContent =
+                    "Please fill all the required fields.";
+
+                message.style.color =
+                    "red";
+
+                return;
+
+            }
+
+
+
+            /* =========================
+               CREATE PURCHASE DATA
+            ========================== */
+
+            const purchaseData = {
+
+                customerId: customerId,
+
+                purchaseOrder: purchaseOrder,
+
+                purchaseDate: purchaseDate,
+
+                productName: productName,
+
+                traderId: traderId,
+
+                traderName: traderName,
+
+                stateName: stateName
+
+            };
+
+
+
+            /* =========================
+               GET OLD PURCHASE RECORDS
+            ========================== */
+
+            let purchaseRecords =
+                JSON.parse(
+                    localStorage.getItem("purchaseRecords")
+                ) || [];
+
+
+
+            /* =========================
+               ADD NEW PURCHASE RECORD
+            ========================== */
+
+            purchaseRecords.push(purchaseData);
+
+
+
+            /* =========================
+               SAVE ALL PURCHASE RECORDS
+            ========================== */
+
+            localStorage.setItem(
+
+                "purchaseRecords",
+
+                JSON.stringify(purchaseRecords)
+
+            );
+
+
+
+            /* =========================
+               SUCCESS MESSAGE
+            ========================== */
+
+            message.textContent =
+                "Purchase details submitted successfully.";
+
+            message.style.color =
+                "green";
+
+
+
+            /* =========================
+               OPEN REPORT PAGE
+            ========================== */
+
+            setTimeout(function() {
+
+                window.location.href =
+                    "report.html";
+
+            }, 1000);
+
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>
