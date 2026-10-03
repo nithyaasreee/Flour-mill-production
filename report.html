@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Purchase Department Report</title>
+
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+
+        body {
+
+            margin: 0;
+
+            padding: 0;
+
+            font-family: Arial, sans-serif;
+
+            background-color: #b9f0f5;
+
+            color: #111;
+
+            min-height: 100vh;
+
+        }
+
+
+        /* =========================
+           TITLE
+        ========================== */
+
+        .report-title {
+
+            font-size: 32px;
+
+            font-weight: bold;
+
+            margin: 28px 12px 18px;
+
+        }
+
+
+        /* =========================
+           TABLE CONTAINER
+        ========================== */
+
+        .table-container {
+
+            width: 100%;
+
+            overflow-x: auto;
+
+            padding: 0 10px 30px;
+
+        }
+
+
+        /* =========================
+           TABLE
+        ========================== */
+
+        table {
+
+            width: 100%;
+
+            min-width: 1000px;
+
+            border-collapse: collapse;
+
+            background-color: #b9f0f5;
+
+        }
+
+
+        /* =========================
+           TABLE HEADER
+        ========================== */
+
+        th {
+
+            background-color: #eeeeee;
+
+            border: 1px solid #c8d1d3;
+
+            padding: 12px 10px;
+
+            text-align: left;
+
+            font-size: 15px;
+
+            font-weight: bold;
+
+            vertical-align: middle;
+
+        }
+
+
+        /* =========================
+           TABLE DATA
+        ========================== */
+
+        td {
+
+            border: 1px solid #c8d1d3;
+
+            padding: 13px 10px;
+
+            font-size: 15px;
+
+            vertical-align: middle;
+
+            background-color: #b9f0f5;
+
+            white-space: nowrap;
+
+        }
+
+
+        /* =========================
+           ALTERNATE ROW
+        ========================== */
+
+        tbody tr:nth-child(even) {
+
+            background-color: rgba(255, 255, 255, 0.08);
+
+        }
+
+
+        /* =========================
+           HOVER
+        ========================== */
+
+        tbody tr:hover {
+
+            background-color: rgba(255, 255, 255, 0.25);
+
+        }
+
+
+        /* =========================
+           DATE
+        ========================== */
+
+        .date {
+
+            white-space: nowrap;
+
+        }
+
+
+        /* =========================
+           NO DATA MESSAGE
+        ========================== */
+
+        #noData {
+
+            text-align: center;
+
+            font-size: 18px;
+
+            font-weight: bold;
+
+            padding: 30px;
+
+            display: none;
+
+        }
+
+
+        /* =========================
+           BUTTON
+        ========================== */
+
+        .button-container {
+
+            text-align: center;
+
+            margin: 20px 0 35px;
+
+        }
+
+
+        .dashboard-button {
+
+            display: inline-block;
+
+            padding: 12px 25px;
+
+            background-color: #26382b;
+
+            color: white;
+
+            text-decoration: none;
+
+            border-radius: 5px;
+
+            font-size: 16px;
+
+            font-weight: bold;
+
+        }
+
+
+        .dashboard-button:hover {
+
+            background-color: #987347;
+
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================== */
+
+        @media (max-width: 700px) {
+
+            .report-title {
+
+                font-size: 25px;
+
+            }
+
+
+            th,
+            td {
+
+                font-size: 13px;
+
+                padding: 9px 7px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         REPORT TITLE
+    ========================== -->
+
+    <h1 class="report-title">
+
+        Purchase Department Report
+
+    </h1>
+
+
+
+    <!-- =========================
+         REPORT TABLE
+    ========================== -->
+
+    <div class="table-container">
+
+
+        <table id="reportTable">
+
+
+            <!-- =========================
+                 TABLE HEADER
+            ========================== -->
+
+            <thead>
+
+                <tr>
+
+                    <th>
+                        Customer Phone Number or ID
+                    </th>
+
+
+                    <th>
+                        Purchase Order Number
+                    </th>
+
+
+                    <th>
+                        Purchase Date
+                    </th>
+
+
+                    <th>
+                        Product Name
+                    </th>
+
+
+                    <th>
+                        Trader ID Number
+                    </th>
+
+
+                    <th>
+                        Trader Name
+                    </th>
+
+
+                    <th>
+                        State Name
+                    </th>
+
+                </tr>
+
+            </thead>
+
+
+
+            <!-- =========================
+                 TABLE BODY
+            ========================== -->
+
+            <tbody id="reportBody">
+
+            </tbody>
+
+
+        </table>
+
+
+
+        <!-- NO DATA MESSAGE -->
+
+        <div id="noData">
+
+            No purchase details available.
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- =========================
+         BACK TO DASHBOARD
+    ========================== -->
+
+    <div class="button-container">
+
+        <a
+            href="dashboard.html"
+            class="dashboard-button"
+        >
+
+            ← Back to Dashboard
+
+        </a>
+
+    </div>
+
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script>
+
+
+        /* =========================
+           GET ALL SAVED PURCHASE RECORDS
+        ========================== */
+
+        const purchaseRecords =
+            JSON.parse(
+                localStorage.getItem("purchaseRecords")
+            ) || [];
+
+
+
+        /* =========================
+           GET TABLE BODY
+        ========================== */
+
+        const reportBody =
+            document.getElementById("reportBody");
+
+
+
+        /* =========================
+           GET NO DATA MESSAGE
+        ========================== */
+
+        const noData =
+            document.getElementById("noData");
+
+
+
+        /* =========================
+           CHECK WHETHER RECORDS EXIST
+        ========================== */
+
+        if (purchaseRecords.length > 0) {
+
+
+            /* =========================
+               DISPLAY ALL PURCHASE RECORDS
+            ========================== */
+
+            purchaseRecords.forEach(function(data) {
+
+
+                /* =========================
+                   CREATE NEW TABLE ROW
+                ========================== */
+
+                const row =
+                    document.createElement("tr");
+
+
+
+                /* =========================
+                   CUSTOMER PHONE / ID
+                ========================== */
+
+                const customerCell =
+                    document.createElement("td");
+
+                customerCell.textContent =
+                    data.customerId;
+
+                row.appendChild(customerCell);
+
+
+
+                /* =========================
+                   PURCHASE ORDER NUMBER
+                ========================== */
+
+                const orderCell =
+                    document.createElement("td");
+
+                orderCell.textContent =
+                    data.purchaseOrder;
+
+                row.appendChild(orderCell);
+
+
+
+                /* =========================
+                   PURCHASE DATE
+                ========================== */
+
+                const dateCell =
+                    document.createElement("td");
+
+                dateCell.textContent =
+                    data.purchaseDate;
+
+                dateCell.className =
+                    "date";
+
+                row.appendChild(dateCell);
+
+
+
+                /* =========================
+                   PRODUCT NAME
+                ========================== */
+
+                const productCell =
+                    document.createElement("td");
+
+                productCell.textContent =
+                    data.productName;
+
+                row.appendChild(productCell);
+
+
+
+                /* =========================
+                   TRADER ID
+                ========================== */
+
+                const traderIdCell =
+                    document.createElement("td");
+
+                traderIdCell.textContent =
+                    data.traderId;
+
+                row.appendChild(traderIdCell);
+
+
+
+                /* =========================
+                   TRADER NAME
+                ========================== */
+
+                const traderNameCell =
+                    document.createElement("td");
+
+                traderNameCell.textContent =
+                    data.traderName;
+
+                row.appendChild(traderNameCell);
+
+
+
+                /* =========================
+                   STATE NAME
+                ========================== */
+
+                const stateCell =
+                    document.createElement("td");
+
+                stateCell.textContent =
+                    data.stateName;
+
+                row.appendChild(stateCell);
+
+
+
+                /* =========================
+                   ADD ROW TO REPORT
+                ========================== */
+
+                reportBody.appendChild(row);
+
+            });
+
+
+        }
+
+        else {
+
+
+            /* =========================
+               NO DATA
+            ========================== */
+
+            noData.style.display =
+                "block";
+
+        }
+
+
+    </script>
+
+
+</body>
+
+</html>
