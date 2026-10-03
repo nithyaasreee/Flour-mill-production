@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Products | Tara Grains Pvt. Ltd.</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+
+        /* =========================
+           PRODUCTS PAGE
+        ========================== */
+
+        .products-page {
+            padding-top: 78px;
+        }
+
+        .products-hero {
+
+            min-height: 430px;
+
+            background:
+                linear-gradient(
+                    rgba(20, 55, 35, 0.70),
+                    rgba(20, 55, 35, 0.70)
+                ),
+                url("images/products.jpg");
+
+            background-size: cover;
+            background-position: center;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+
+            color: white;
+
+            padding: 60px 8%;
+        }
+
+        .products-hero h1 {
+
+            font-family: "Playfair Display", Georgia, serif;
+
+            font-size: 58px;
+
+            margin-bottom: 15px;
+        }
+
+        .products-hero p {
+
+            max-width: 700px;
+
+            margin: auto;
+
+            font-size: 17px;
+
+            line-height: 1.8;
+
+            color: #edf3ee;
+        }
+
+
+        /* PRODUCT LIST */
+
+        .product-details {
+
+            padding: 90px 8%;
+
+            background: #faf8f2;
+        }
+
+        .product-heading {
+
+            text-align: center;
+
+            max-width: 700px;
+
+            margin: 0 auto 55px;
+        }
+
+        .product-heading .section-label {
+
+            color: #987347;
+
+            font-size: 11px;
+
+            font-weight: 800;
+
+            letter-spacing: 2.5px;
+        }
+
+        .product-heading h2 {
+
+            font-family:
+                "Playfair Display",
+                Georgia,
+                serif;
+
+            color: #26382b;
+
+            font-size: 42px;
+
+            margin: 10px 0 15px;
+        }
+
+        .product-heading p {
+
+            color: #6c746d;
+
+            font-size: 15px;
+
+            line-height: 1.8;
+        }
+
+
+        /* PRODUCT CARDS */
+
+        .products-container {
+
+            max-width: 1150px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 30px;
+        }
+
+        .product-detail-card {
+
+            background: white;
+
+            border-radius: 14px;
+
+            overflow: hidden;
+
+            border: 1px solid #e1e4de;
+
+            transition: 0.3s ease;
+        }
+
+        .product-detail-card:hover {
+
+            transform: translateY(-8px);
+
+            box-shadow:
+                0 18px 40px
+                rgba(40, 60, 45, 0.12);
+        }
+
+
+        /* PRODUCT IMAGE */
+
+        .product-image {
+
+            width: 100%;
+
+            height: 250px;
+
+            object-fit: cover;
+
+            display: block;
+        }
+
+
+        /* PRODUCT CONTENT */
+
+        .product-detail-content {
+
+            padding: 30px;
+        }
+
+        .product-detail-content h3 {
+
+            font-family:
+                "Playfair Display",
+                Georgia,
+                serif;
+
+            color: #26382b;
+
+            font-size: 27px;
+
+            margin-bottom: 12px;
+        }
+
+        .product-detail-content p {
+
+            color: #737a73;
+
+            font-size: 14px;
+
+            line-height: 1.8;
+
+            margin-bottom: 18px;
+        }
+
+        .product-detail-content ul {
+
+            padding-left: 18px;
+
+            color: #59625b;
+
+            font-size: 13px;
+
+            line-height: 2;
+        }
+
+
+        /* PRODUCTION INFORMATION */
+
+        .production-section {
+
+            padding: 90px 8%;
+
+            background: #f4efde;
+        }
+
+        .production-container {
+
+            max-width: 1100px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 50px;
+
+            align-items: center;
+        }
+
+        .production-image {
+
+            min-height: 400px;
+
+            border-radius: 14px;
+
+            background-image:
+                url("images/factory.jpg");
+
+            background-size: cover;
+
+            background-position: center;
+        }
+
+        .production-text .section-label {
+
+            color: #987347;
+
+            font-size: 11px;
+
+            font-weight: 800;
+
+            letter-spacing: 2.5px;
+        }
+
+        .production-text h2 {
+
+            font-family:
+                "Playfair Display",
+                Georgia,
+                serif;
+
+            color: #26382b;
+
+            font-size: 40px;
+
+            line-height: 1.2;
+
+            margin: 10px 0 20px;
+        }
+
+        .production-text p {
+
+            color: #6c746d;
+
+            font-size: 15px;
+
+            line-height: 1.9;
+
+            margin-bottom: 15px;
+        }
+
+
+        /* MOBILE */
+
+        @media (max-width: 750px) {
+
+            .products-hero h1 {
+
+                font-size: 42px;
+            }
+
+            .products-container {
+
+                grid-template-columns: 1fr;
+            }
+
+            .production-container {
+
+                grid-template-columns: 1fr;
+            }
+
+            .production-image {
+
+                min-height: 300px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         NAVIGATION
+    ========================== -->
+
+    <header class="navbar">
+
+        <div class="logo">
+
+            <h2>TARA GRAINS</h2>
+
+            <span>PVT. LTD.</span>
+
+        </div>
+
+
+        <nav>
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="about.html">
+                About Us
+            </a>
+
+            <a href="products.html" class="active">
+                Products
+            </a>
+
+            <a href="index.html#contact">
+                Contact
+            </a>
+
+            <a href="login.html" class="login-btn">
+                Login
+            </a>
+
+        </nav>
+
+    </header>
+
+
+
+    <main class="products-page">
+
+
+        <!-- =========================
+             PRODUCTS HERO
+        ========================== -->
+
+        <section class="products-hero">
+
+            <div>
+
+                <p class="small-title">
+                    TARA GRAINS PVT. LTD.
+                </p>
+
+                <h1>
+                    Our Products
+                </h1>
+
+                <p>
+                    Quality wheat-based products processed with
+                    care and consistency for different customer needs.
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             PRODUCT DETAILS
+        ========================== -->
+
+        <section class="product-details">
+
+
+            <div class="product-heading">
+
+                <p class="section-label">
+                    OUR PRODUCTS
+                </p>
+
+                <h2>
+                    Flour Products
+                </h2>
+
+                <p>
+                    Tara Grains provides a range of flour products
+                    designed for different food preparation and
+                    processing requirements.
+                </p>
+
+            </div>
+
+
+
+            <div class="products-container">
+
+
+                <!-- MAIDA -->
+
+                <div class="product-detail-card">
+
+                    <img
+                        src="images/Maida.png"
+                        alt="Maida Flour"
+                        class="product-image"
+                    >
+
+                    <div class="product-detail-content">
+
+                        <h3>
+                            Maida
+                        </h3>
+
+                        <p>
+                            Refined wheat flour suitable for a variety
+                            of bakery, food preparation and cooking
+                            applications.
+                        </p>
+
+                        <ul>
+
+                            <li>Fine refined flour</li>
+
+                            <li>Suitable for bakery products</li>
+
+                            <li>Useful for cooking applications</li>
+
+                            <li>Consistent texture</li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- WHEAT ATTA -->
+
+                <div class="product-detail-card">
+
+                    <img
+                        src="images/Wheat Atta.png"
+                        alt="Wheat Atta"
+                        class="product-image"
+                    >
+
+                    <div class="product-detail-content">
+
+                        <h3>
+                            Wheat Atta
+                        </h3>
+
+                        <p>
+                            Wheat flour suitable for preparing everyday
+                            food products such as roti, chapati and
+                            other wheat-based dishes.
+                        </p>
+
+                        <ul>
+
+                            <li>Made from wheat</li>
+
+                            <li>Suitable for chapati and roti</li>
+
+                            <li>Everyday cooking use</li>
+
+                            <li>Consistent flour quality</li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- WHEAT BRAN -->
+
+                <div class="product-detail-card">
+
+                    <img
+                        src="images/Wheat Bran.png"
+                        alt="Wheat Bran"
+                        class="product-image"
+                    >
+
+                    <div class="product-detail-content">
+
+                        <h3>
+                            Wheat Bran
+                        </h3>
+
+                        <p>
+                            The outer layer separated during wheat
+                            processing and milling, commonly used
+                            in food and feed applications.
+                        </p>
+
+                        <ul>
+
+                            <li>Obtained during milling</li>
+
+                            <li>Useful by-product</li>
+
+                            <li>Food applications</li>
+
+                            <li>Feed applications</li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             PRODUCTION INFORMATION
+        ========================== -->
+
+        <section class="production-section">
+
+
+            <div class="production-container">
+
+
+                <div class="production-image"></div>
+
+
+                <div class="production-text">
+
+                    <p class="section-label">
+                        PRODUCTION PROCESS
+                    </p>
+
+                    <h2>
+                        Organized Flour Production
+                    </h2>
+
+                    <p>
+                        Wheat flour production involves organized
+                        processing and milling activities to convert
+                        wheat into useful flour products.
+                    </p>
+
+                    <p>
+                        Our production management approach focuses on
+                        maintaining product information, production
+                        records, customer information and order details
+                        in an organized manner.
+                    </p>
+
+                    <p>
+                        This helps support efficient production,
+                        systematic record management and reliable
+                        product handling.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <div class="footer-logo">
+            TARA GRAINS PVT. LTD.
+        </div>
+
+        <p>
+            Quality Flour. Trusted Production.
+        </p>
+
+        <p class="copyright">
+            © 2026 Tara Grains Pvt. Ltd. All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>
