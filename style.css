@@ -1,0 +1,1074 @@
+/* =========================================================
+   TARA GRAINS - FLOUR MILL PRODUCTION MANAGEMENT SYSTEM
+   HOME PAGE STYLES
+========================================================= */
+
+
+/* =========================================================
+   1. BASIC RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "DM Sans", Arial, sans-serif;
+
+    background-color: #faf8f2;
+
+    color: #242a25;
+
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+
+/* =========================================================
+   2. NAVIGATION BAR
+========================================================= */
+
+.navbar {
+    width: 100%;
+    height: 78px;
+
+    padding: 0 7%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    background: #ffffff;
+
+    border-bottom: 1px solid #e5e5df;
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    z-index: 1000;
+
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+}
+
+
+/* =========================================================
+   3. LOGO
+========================================================= */
+
+.logo {
+    cursor: pointer;
+}
+
+.logo h2 {
+    color: #245b38;
+
+    font-size: 21px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    line-height: 1.1;
+}
+
+.logo span {
+    display: block;
+
+    color: #987347;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+    margin-top: 2px;
+}
+
+
+/* =========================================================
+   4. NAVIGATION LINKS
+========================================================= */
+
+.navbar nav {
+    display: flex;
+
+    align-items: center;
+
+    gap: 28px;
+}
+
+.navbar nav a {
+    color: #555d56;
+
+    font-size: 14px;
+
+    font-weight: 500;
+
+    position: relative;
+
+    transition: all 0.3s ease;
+}
+
+
+/* Hover line */
+
+.navbar nav a:not(.login-btn)::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: -7px;
+
+    width: 0;
+
+    height: 2px;
+
+    background: #245b38;
+
+    transition: width 0.3s ease;
+}
+
+.navbar nav a:not(.login-btn):hover::after {
+    width: 100%;
+}
+
+
+/* Active page */
+
+.navbar nav a.active {
+    color: #245b38;
+
+    font-weight: 700;
+}
+
+.navbar nav a.active::after {
+    width: 100%;
+}
+
+
+/* =========================================================
+   5. LOGIN BUTTON
+========================================================= */
+
+.login-btn {
+    background: #245b38;
+
+    color: #ffffff !important;
+
+    padding: 10px 21px;
+
+    border-radius: 6px;
+
+    font-weight: 600 !important;
+
+    transition: all 0.3s ease;
+}
+
+.login-btn:hover {
+    background: #173f27;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 7px 18px rgba(36, 91, 56, 0.25);
+}
+
+
+/* =========================================================
+   6. HERO SECTION
+========================================================= */
+
+.hero {
+    height: 760px;
+
+    width: 100%;
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    overflow: hidden;
+
+    margin-top: 78px;
+}
+
+
+/* =========================================================
+   7. FACTORY IMAGE
+========================================================= */
+
+.hero-image {
+    position: absolute;
+    inset: 0;
+    background-image: url("../images/factory.jpg");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+
+/* =========================================================
+   8. HERO OVERLAY
+========================================================= */
+
+.hero-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+
+            rgba(13, 35, 21, 0.82) 0%,
+
+            rgba(13, 35, 21, 0.68) 28%,
+
+            rgba(13, 35, 21, 0.38) 58%,
+
+            rgba(13, 35, 21, 0.10) 100%
+        );
+}
+
+
+/* =========================================================
+   9. HERO CONTENT
+========================================================= */
+
+.hero-content {
+    position: relative;
+
+    z-index: 2;
+
+    width: 90%;
+
+    max-width: 650px;
+
+    margin-left: 9%;
+
+    color: white;
+}
+
+
+/* Small title */
+
+.small-title {
+    color: #e8c990;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 18px;
+}
+
+
+/* Main heading */
+
+.hero-content h1 {
+    font-family:
+        "Playfair Display",
+        Georgia,
+        serif;
+
+    font-size: 65px;
+
+    line-height: 1.08;
+
+    font-weight: 700;
+
+    letter-spacing: -1px;
+
+    margin-bottom: 25px;
+}
+
+
+/* Hero paragraph */
+
+.hero-description {
+    max-width: 560px;
+
+    color: #eef3ef;
+
+    font-size: 17px;
+
+    line-height: 1.8;
+
+    margin-bottom: 35px;
+}
+
+
+/* =========================================================
+   10. HERO BUTTONS
+========================================================= */
+
+.hero-buttons {
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+}
+
+
+/* Primary button */
+
+.primary-btn {
+    display: inline-block;
+
+    padding: 14px 25px;
+
+    background: #d19a51;
+
+    color: white;
+
+    border-radius: 6px;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    transition: all 0.3s ease;
+}
+
+.primary-btn:hover {
+    background: #b77e39;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+
+/* Secondary button */
+
+.secondary-btn {
+    display: inline-block;
+
+    padding: 13px 24px;
+
+    border: 1px solid rgba(255, 255, 255, 0.85);
+
+    color: white;
+
+    border-radius: 6px;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    transition: all 0.3s ease;
+}
+
+.secondary-btn:hover {
+    background: white;
+
+    color: #245b38;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   11. INTRODUCTION SECTION
+========================================================= */
+
+.intro {
+    padding: 95px 8%;
+
+    display: grid;
+
+    grid-template-columns:
+        1.6fr
+        1fr
+        1fr
+        1fr;
+
+    gap: 24px;
+
+    background: #faf8f2;
+}
+
+
+/* =========================================================
+   12. INTRO TEXT
+========================================================= */
+
+.intro-text {
+    padding-right: 30px;
+}
+
+
+/* Section label */
+
+.section-label {
+    color: #987347;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 2.5px;
+
+    margin-bottom: 12px;
+}
+
+
+/* Section headings */
+
+.intro-text h2,
+.section-heading h2,
+.contact h2 {
+    font-family:
+        "Playfair Display",
+        Georgia,
+        serif;
+
+    font-size: 39px;
+
+    line-height: 1.2;
+
+    font-weight: 700;
+
+    color: #26382b;
+
+    margin-bottom: 20px;
+}
+
+
+/* Intro paragraphs */
+
+.intro-text p {
+    color: #6c746d;
+
+    font-size: 14px;
+
+    line-height: 1.85;
+
+    margin-bottom: 15px;
+}
+
+
+/* =========================================================
+   13. LEARN MORE
+========================================================= */
+
+.text-btn {
+    display: inline-block;
+
+    margin-top: 8px;
+
+    color: #245b38;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    transition: all 0.3s ease;
+}
+
+.text-btn:hover {
+    color: #987347;
+
+    transform: translateX(4px);
+}
+
+
+/* =========================================================
+   14. INTRO CARDS
+========================================================= */
+
+.intro-card {
+    background: #ffffff;
+
+    border: 1px solid #e4e7e1;
+
+    border-radius: 12px;
+
+    padding: 28px;
+
+    min-height: 220px;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.intro-card:hover {
+    transform: translateY(-7px);
+
+    border-color: #c8d9cc;
+
+    box-shadow:
+        0 18px 40px
+        rgba(30, 60, 40, 0.10);
+}
+
+
+/* Icon circle */
+
+.icon {
+    width: 55px;
+
+    height: 55px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #e8f1e9;
+
+    border-radius: 50%;
+
+    font-size: 25px;
+
+    margin-bottom: 18px;
+}
+
+
+/* Card heading */
+
+.intro-card h3 {
+    color: #26382b;
+
+    font-size: 18px;
+
+    font-weight: 700;
+
+    margin-bottom: 10px;
+}
+
+
+/* Card paragraph */
+
+.intro-card p {
+    color: #727a73;
+
+    font-size: 13px;
+
+    line-height: 1.75;
+}
+
+
+/* =========================================================
+   14A. FLOUR IMAGE
+========================================================= */
+
+.flour-image {
+    width: 100%;
+    min-height: 350px;
+    background-image: url("../images/flour.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+/* =========================================================
+   15. PRODUCTS SECTION
+========================================================= */
+
+.products-preview {
+    padding: 95px 8%;
+    background:
+        linear-gradient(
+            rgba(244, 239, 222, 0.91),
+            rgba(244, 239, 222, 0.91)
+        ),
+        url("../images/products.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+
+/* =========================================================
+   16. PRODUCTS SECTION HEADING
+========================================================= */
+
+.section-heading {
+    text-align: center;
+
+    max-width: 650px;
+
+    margin: 0 auto 48px;
+}
+
+.section-heading h2 {
+    margin-bottom: 12px;
+}
+
+.section-heading > p:not(.section-label) {
+    color: #6c746d;
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   17. PRODUCT CARDS
+========================================================= */
+
+.product-cards {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+
+    max-width: 1100px;
+
+    margin: 0 auto;
+}
+
+
+.product-card {
+    background: rgba(255, 255, 255, 0.97);
+
+    padding: 35px;
+
+    border-radius: 13px;
+
+    border: 1px solid #e3e3dc;
+
+    text-align: center;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 18px 40px
+        rgba(50, 60, 40, 0.14);
+}
+
+
+/* Product icon */
+
+.product-icon {
+    width: 70px;
+
+    height: 70px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin: 0 auto 20px;
+
+    border-radius: 50%;
+
+    background: #e9f2e9;
+
+    font-size: 32px;
+}
+
+
+/* Product heading */
+
+.product-card h3 {
+    font-family:
+        "Playfair Display",
+        Georgia,
+        serif;
+
+    color: #26382b;
+
+    font-size: 24px;
+
+    margin-bottom: 10px;
+}
+
+
+/* Product description */
+
+.product-card p {
+    color: #737a73;
+
+    font-size: 14px;
+
+    line-height: 1.75;
+
+    margin-bottom: 18px;
+}
+
+
+/* Product link */
+
+.product-card a {
+    color: #245b38;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    transition: color 0.3s ease;
+}
+
+.product-card a:hover {
+    color: #987347;
+}
+
+
+/* =========================================================
+   18. CONTACT SECTION
+========================================================= */
+
+.contact {
+    margin: 75px 8%;
+
+    padding: 55px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 30px;
+
+    background:
+        linear-gradient(
+            120deg,
+            #245b38,
+            #39754e
+        );
+
+    border-radius: 18px;
+
+    color: white;
+
+    box-shadow:
+        0 15px 40px
+        rgba(36, 91, 56, 0.15);
+}
+
+
+/* Contact label */
+
+.contact .section-label {
+    color: #e7c995;
+}
+
+
+/* Contact heading */
+
+.contact h2 {
+    color: white;
+
+    margin-bottom: 10px;
+}
+
+
+/* Contact text */
+
+.contact p:not(.section-label) {
+    color: #dce8df;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   19. FOOTER
+========================================================= */
+
+footer {
+    padding: 38px 8%;
+
+    background: #172c20;
+
+    text-align: center;
+
+    color: #c9d2cb;
+}
+
+
+/* Footer logo */
+
+.footer-logo {
+    color: white;
+
+    font-size: 18px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 8px;
+}
+
+
+/* Footer text */
+
+footer p {
+    font-size: 12px;
+
+    margin: 5px;
+}
+
+
+/* Copyright */
+
+.copyright {
+    color: #8f9d93;
+}
+
+
+/* =========================================================
+   20. TABLET RESPONSIVE
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .navbar {
+        padding: 0 5%;
+    }
+
+
+    .hero-content {
+        margin-left: 7%;
+    }
+
+
+    .hero-content h1 {
+        font-size: 55px;
+    }
+
+
+    .intro {
+        grid-template-columns:
+            1fr 1fr;
+    }
+
+
+    .intro-text {
+        grid-column: 1 / -1;
+
+        padding-right: 0;
+
+        margin-bottom: 15px;
+    }
+
+
+    .product-cards {
+        grid-template-columns:
+            repeat(3, 1fr);
+    }
+}
+
+
+/* =========================================================
+   21. MOBILE
+========================================================= */
+
+@media (max-width: 750px) {
+
+    /* Navbar */
+
+    .navbar {
+        height: 70px;
+
+        padding: 0 5%;
+    }
+
+
+    .navbar nav {
+        gap: 10px;
+    }
+
+
+    .navbar nav a:not(.login-btn) {
+        display: none;
+    }
+
+
+    /* Hero */
+
+    .hero {
+        height: 650px;
+
+        margin-top: 70px;
+    }
+
+
+    .hero-content {
+        width: 88%;
+
+        margin: 0 auto;
+    }
+
+
+    .hero-content h1 {
+        font-size: 44px;
+
+        letter-spacing: -0.5px;
+    }
+
+
+    .hero-description {
+        font-size: 15px;
+
+        line-height: 1.7;
+    }
+
+
+    .hero-buttons {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+
+    /* Introduction */
+
+    .intro {
+        padding: 70px 6%;
+
+        grid-template-columns: 1fr;
+    }
+
+
+    .intro-text {
+        grid-column: auto;
+
+        padding-right: 0;
+    }
+
+
+    .intro-text h2,
+    .section-heading h2,
+    .contact h2 {
+        font-size: 33px;
+    }
+
+
+    /* Products */
+
+    .products-preview {
+        padding: 70px 6%;
+
+        background-attachment: scroll;
+    }
+
+
+    .product-cards {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* Contact */
+
+    .contact {
+        margin: 50px 6%;
+
+        padding: 38px 28px;
+
+        display: block;
+    }
+
+
+    .contact .primary-btn {
+        margin-top: 22px;
+    }
+
+
+    /* Footer */
+
+    footer {
+        padding: 30px 6%;
+    }
+}
+
+
+/* =========================================================
+   22. SMALL MOBILE
+========================================================= */
+
+@media (max-width: 450px) {
+
+    .logo h2 {
+        font-size: 17px;
+    }
+
+
+    .logo span {
+        font-size: 7px;
+    }
+
+
+    .login-btn {
+        padding: 8px 14px;
+    }
+
+
+    .hero-content h1 {
+        font-size: 36px;
+    }
+
+
+    .small-title {
+        font-size: 10px;
+
+        letter-spacing: 2px;
+    }
+
+
+    .primary-btn,
+    .secondary-btn {
+        padding: 12px 19px;
+    }
+
+
+    .intro {
+        padding: 55px 5%;
+    }
+
+
+    .products-preview {
+        padding: 55px 5%;
+    }
+
+
+    .contact {
+        margin: 40px 5%;
+    }
+}
